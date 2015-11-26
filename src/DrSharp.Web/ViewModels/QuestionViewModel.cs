@@ -1,3 +1,4 @@
+using DrSharp.Domain.Logic;
 using DrSharp.Domain.Models;
 using TweetSharp;
 
@@ -26,10 +27,12 @@ namespace DrSharp.Web.ViewModels
             To = "";
             From = twitterStatus.User != null ? twitterStatus.User.Name : "LS#er";
             Content = twitterStatus.Text;
-            Msg_Id = twitterStatus.Text;
+            Msg_Id = twitterStatus.Id.ToString();
             DateAsked = twitterStatus.CreatedDate.ToShortDateString();
             Keyword = "";
-            Answer = "TODO";
+            var chatbot = new DoctorClockwork("~/config/settings.xml");
+            var answer = chatbot.AskMeAnything(From, Content);
+            Answer = answer;
         }
         #endregion
 
