@@ -11,10 +11,16 @@ namespace DrSharp.Web.Modules
 {
     public class QuestionModule : NancyModule
     {
-        private const string ConsumerKey = "cCUfLlJdwNanXcdTFPaw";
-        private const string ConsumerSecret = "LeLyBeYm655HdtdAJnBr74NDZ7DXWKgxmVQomhN1Y";
-        private const string AccessToken = "576199065-QkMWPvETEvstaTkC2ksQ8Y3tvrJip0XDjTVgEZu7";
-        private const string AccessTokenSecret = "ydDC3XFV98i8GHihwbMkhD5VNGrbtRE0B0iQM6Mtj0nAj";
+        private const string TwitterConsumerKey = "cCUfLlJdwNanXcdTFPaw";
+        private const string TwitterConsumerSecret = "LeLyBeYm655HdtdAJnBr74NDZ7DXWKgxmVQomhN1Y";
+        private const string TwitterAccessToken = "576199065-QkMWPvETEvstaTkC2ksQ8Y3tvrJip0XDjTVgEZu7";
+        private const string TwitterAccessTokenSecret = "ydDC3XFV98i8GHihwbMkhD5VNGrbtRE0B0iQM6Mtj0nAj";
+
+        private const string MeetupApiKey = "3fd2f5cd29c3e17615754642263b";
+        private const string Christmas2015EventId = "225585634";
+
+        // get rspv's from meetup.com
+        // https://api.meetup.com/2/rsvps?key=YOUR_KEY&event_id=789&order=name
 
         public QuestionModule(IDocumentSession documentSession)
         {
@@ -30,8 +36,8 @@ namespace DrSharp.Web.Modules
                 //    };
 
                 // Twitter
-                var twitterService = new TwitterService(ConsumerKey, ConsumerSecret);
-                twitterService.AuthenticateWith(AccessToken, AccessTokenSecret);
+                var twitterService = new TwitterService(TwitterConsumerKey, TwitterConsumerSecret);
+                twitterService.AuthenticateWith(TwitterAccessToken, TwitterAccessTokenSecret);
                 var tweets = twitterService.ListTweetsMentioningMe(new ListTweetsMentioningMeOptions());
 
                 var questions = new List<QuestionViewModel>();
