@@ -1,10 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using DrSharp.Domain.Models;
 using DrSharp.Web.ViewModels;
 using Nancy;
 using Raven.Client;
-using Raven.Client.Linq;
 using TweetSharp;
 
 namespace DrSharp.Web.Modules
@@ -26,19 +24,11 @@ namespace DrSharp.Web.Modules
         {
             Get["/"] = _ =>
             {
-                // RavenDB
-                //var questions = documentSession.Query<Question>().OrderByDescending(x => x.DateAsked).ToList();
-
-                //var viewModel = new IndexViewModel
-                //    {
-                //        Questions = questions.Select(x => new QuestionViewModel(x)).ToList(),
-                //        Count = documentSession.Query<Question>().Count(),
-                //    };
-
                 // Twitter
                 var twitterService = new TwitterService(TwitterConsumerKey, TwitterConsumerSecret);
                 twitterService.AuthenticateWith(TwitterAccessToken, TwitterAccessTokenSecret);
-                var tweets = twitterService.ListTweetsMentioningMe(new ListTweetsMentioningMeOptions());
+                //var tweets = twitterService.ListTweetsMentioningMe(new ListTweetsMentioningMeOptions());
+                var tweets = twitterService.ListTweetsMentioningMe(new ListTweetsMentioningMeOptions {SinceId = 5});
 
                 var questions = new List<QuestionViewModel>();
                 foreach (var tweet in tweets)

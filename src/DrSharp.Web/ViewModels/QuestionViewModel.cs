@@ -24,9 +24,9 @@ namespace DrSharp.Web.ViewModels
         public QuestionViewModel(TwitterStatus twitterStatus)
         {
             To = "";
-            From = twitterStatus.Author.ScreenName;
+            From = twitterStatus.User != null ? twitterStatus.User.Name : "LS#er";
             Content = twitterStatus.Text;
-            Msg_Id = "";
+            Msg_Id = twitterStatus.Text;
             DateAsked = twitterStatus.CreatedDate.ToShortDateString();
             Keyword = "";
             Answer = "TODO";
