@@ -1,3 +1,4 @@
+using System.Web;
 using DrSharp.Domain.Logic;
 using DrSharp.Domain.Models;
 using TweetSharp;
@@ -24,15 +25,24 @@ namespace DrSharp.Web.ViewModels
 
         public QuestionViewModel(TwitterStatus twitterStatus)
         {
+            Channel = MessageChannel.Twitter;
             To = "";
             From = twitterStatus.User != null ? twitterStatus.User.Name : "LS#er";
             Content = twitterStatus.Text;
             Msg_Id = twitterStatus.Id.ToString();
             DateAsked = twitterStatus.CreatedDate.ToShortDateString();
             Keyword = "";
-            var chatbot = new DoctorSharp("~/config/settings.xml");
-            var answer = chatbot.Ask(From, Content);
-            Answer = answer;
+            if (!string.IsNullOrEmpty(Content))
+            {
+                var aimlPath = HttpContext.Current.Server.MapPath("~/aiml/");
+                var chatbot = new DoctorSharp(aimlPath);
+                var answer = chatbot.Ask(From, Content);
+                Answer = answer; 
+            }
+            else
+            {
+                Answer = "There was no question.";
+            }
         }
         #endregion
 
