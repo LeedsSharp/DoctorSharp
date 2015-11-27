@@ -1,0 +1,11 @@
+E:\Code\GitHub\DoctorSharp\src\DrSharp.Tests\bin\Debug\DrSharp.Tests.dll
+E:\Code\GitHub\DoctorSharp\src\DrSharp.Tests\bin\Debug\DrSharp.Tests.pdb
+E:\Code\GitHub\DoctorSharp\src\DrSharp.Tests\obj\Debug\DrSharp.Tests.csprojResolveAssemblyReference.cache
+E:\Code\GitHub\DoctorSharp\src\DrSharp.Tests\obj\Debug\DrSharp.Tests.dll
+E:\Code\GitHub\DoctorSharp\src\DrSharp.Tests\obj\Debug\DrSharp.Tests.pdb
+E:\Code\GitHub\DoctorSharp\src\DrSharp.Tests\bin\Debug\DrSharp.Domain.dll
+E:\Code\GitHub\DoctorSharp\src\DrSharp.Tests\bin\Debug\nunit.framework.dll
+E:\Code\GitHub\DoctorSharp\src\DrSharp.Tests\bin\Debug\Clockwork.dll
+E:\Code\GitHub\DoctorSharp\src\DrSharp.Tests\bin\Debug\AIMLbot.dll
+E:\Code\GitHub\DoctorSharp\src\DrSharp.Tests\bin\Debug\DrSharp.Domain.pdb
+E:\Code\GitHub\DoctorSharp\src\DrSharp.Tests\bin\Debug\nunit.framework.xml

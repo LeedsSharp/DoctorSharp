@@ -30,7 +30,7 @@ namespace DrSharp.Web.ViewModels
             Msg_Id = twitterStatus.Id.ToString();
             DateAsked = twitterStatus.CreatedDate.ToShortDateString();
             Keyword = "";
-            var chatbot = new DoctorClockwork("~/config/settings.xml");
+            var chatbot = new DoctorSharp("~/config/settings.xml");
             var answer = chatbot.AskMeAnything(From, Content);
             Answer = answer;
         }

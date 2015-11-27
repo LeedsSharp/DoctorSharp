@@ -22,7 +22,7 @@ namespace DrSharp.Web.Modules
 
                     var pathToAiml = System.Web.HttpContext.Current.Server.MapPath(@"~/aiml");
 
-                    var drClockwork = new DoctorClockwork(pathToAiml);
+                    var drClockwork = new DoctorSharp(pathToAiml);
 
                     var answer = drClockwork.AskMeAnything(model.From, model.Content);
 
