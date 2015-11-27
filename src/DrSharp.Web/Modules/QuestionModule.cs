@@ -4,6 +4,7 @@ using DrSharp.Web.ViewModels;
 using Nancy;
 using Raven.Client;
 using TweetSharp;
+using SearchOptions = TweetSharp.SearchOptions;
 
 namespace DrSharp.Web.Modules
 {
@@ -29,11 +30,20 @@ namespace DrSharp.Web.Modules
                 twitterService.AuthenticateWith(TwitterAccessToken, TwitterAccessTokenSecret);
                 //var tweets = twitterService.ListTweetsMentioningMe(new ListTweetsMentioningMeOptions());
                 var tweets = twitterService.ListTweetsMentioningMe(new ListTweetsMentioningMeOptions {SinceId = 5});
-
+                //var tweets2 = twitterService.Search(new SearchOptions{Q = "#drsharp"});
+                
                 var questions = new List<QuestionViewModel>();
-                foreach (var tweet in tweets)
+                foreach (var tweet in tweets.Where(t => !string.IsNullOrEmpty(t.Text) && t.Text.Contains("#drsharp")))
                 {
                     var question = new QuestionViewModel(tweet) { Channel = MessageChannel.Twitter };
+
+                    // Note: tweet working, but not in reply to sender. Also need to add some hashtag to the answer.
+                    //twitterService.SendTweet(new SendTweetOptions
+                    //{
+                    //    DisplayCoordinates = true,
+                    //    InReplyToStatusId = tweet.Id,
+                    //    Status = question.Answer
+                    //});
                     questions.Add(question);
                 }
 
