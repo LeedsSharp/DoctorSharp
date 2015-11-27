@@ -3,12 +3,12 @@
   <item name="aimldirectory" value="aiml"/>
   <item name="configdirectory" value="config"/>
   <item name="logdirectory" value="logs"/>
-  <item name="splittersfile" value="D:\Code\Leeds Sharp\DoctorSharp\DrSharp.Web\config\Splitters.xml"/>
-  <item name="person2substitutionsfile" value="D:\Code\Leeds Sharp\DoctorSharp\DrSharp.Web\config\Person2Substitutions.xml"/>
-  <item name="personsubstitutionsfile" value="D:\Code\Leeds Sharp\DoctorSharp\DrSharp.Web\config\PersonSubstitutions.xml"/>
-  <item name="gendersubstitutionsfile" value="D:\Code\Leeds Sharp\DoctorSharp\DrSharp.Web\config\GenderSubstitutions.xml"/>
-  <item name="defaultpredicates" value="D:\Code\Leeds Sharp\DoctorSharp\DrSharp.Web\config\DefaultPredicates.xml"/>
-  <item name="substitutionsfile" value="D:\Code\Leeds Sharp\DoctorSharp\DrSharp.Web\config\Substitutions.xml"/>
+  <item name="splittersfile" value="D:\Code\Leeds Sharp\DoctorSharp\src\DrSharp.Tests\config\Splitters.xml"/>
+  <item name="person2substitutionsfile" value="D:\Code\Leeds Sharp\DoctorSharp\src\DrSharp.Tests\config\Person2Substitutions.xml"/>
+  <item name="personsubstitutionsfile" value="D:\Code\Leeds Sharp\DoctorSharp\src\DrSharp.Tests\config\PersonSubstitutions.xml"/>
+  <item name="gendersubstitutionsfile" value="D:\Code\Leeds Sharp\DoctorSharp\src\DrSharp.Tests\config\GenderSubstitutions.xml"/>
+  <item name="defaultpredicates" value="D:\Code\Leeds Sharp\DoctorSharp\src\DrSharp.Tests\config\DefaultPredicates.xml"/>
+  <item name="substitutionsfile" value="D:\Code\Leeds Sharp\DoctorSharp\src\DrSharp.Tests\config\Substitutions.xml"/>
   <item name="maxlogbuffersize" value="64"/>
   <item name="notacceptinguserinputmessage" value="This bot is currently set to not accept user input."/>
   <item name="stripperregex" value="[^0-9a-zA-Z]"/>
@@ -21,7 +21,7 @@
   <item name="gender" value="male"/>
   <item name="birthday" value="2013/10/27"/>
   <item name="birthplace" value="the Museum Of Science and Industry"/>
-  <item name="website" value="http://drclockwork.tronik.co.uk"/>
+  <item name="website" value="http://leeds-sharp.org"/>
   <item name="adminemail" value=""/>
   <item name="islogging" value="false"/>
   <item name="willcallhome" value="false"/>

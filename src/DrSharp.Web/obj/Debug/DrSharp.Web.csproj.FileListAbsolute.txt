@@ -36,3 +36,41 @@ E:\Code\GitHub\DoctorSharp\src\DrSharp.Web\bin\TweetSharp.pdb
 E:\Code\GitHub\DoctorSharp\src\DrSharp.Web\obj\Debug\DrSharp.Web.csprojResolveAssemblyReference.cache
 E:\Code\GitHub\DoctorSharp\src\DrSharp.Web\obj\Debug\DrSharp.Web.dll
 E:\Code\GitHub\DoctorSharp\src\DrSharp.Web\obj\Debug\DrSharp.Web.pdb
+D:\Code\Leeds Sharp\DoctorSharp\src\DrSharp.Web\bin\DrSharp.Web.dll.config
+D:\Code\Leeds Sharp\DoctorSharp\src\DrSharp.Web\bin\DrSharp.Web.dll
+D:\Code\Leeds Sharp\DoctorSharp\src\DrSharp.Web\bin\DrSharp.Web.pdb
+D:\Code\Leeds Sharp\DoctorSharp\src\DrSharp.Web\bin\DrSharp.Domain.dll
+D:\Code\Leeds Sharp\DoctorSharp\src\DrSharp.Web\bin\Hammock.ClientProfile.dll
+D:\Code\Leeds Sharp\DoctorSharp\src\DrSharp.Web\bin\Hammock.dll
+D:\Code\Leeds Sharp\DoctorSharp\src\DrSharp.Web\bin\Microsoft.AspNet.SignalR.Core.dll
+D:\Code\Leeds Sharp\DoctorSharp\src\DrSharp.Web\bin\Microsoft.AspNet.SignalR.Owin.dll
+D:\Code\Leeds Sharp\DoctorSharp\src\DrSharp.Web\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+D:\Code\Leeds Sharp\DoctorSharp\src\DrSharp.Web\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Code\Leeds Sharp\DoctorSharp\src\DrSharp.Web\bin\Microsoft.Web.Infrastructure.dll
+D:\Code\Leeds Sharp\DoctorSharp\src\DrSharp.Web\bin\Nancy.dll
+D:\Code\Leeds Sharp\DoctorSharp\src\DrSharp.Web\bin\Nancy.Hosting.Aspnet.dll
+D:\Code\Leeds Sharp\DoctorSharp\src\DrSharp.Web\bin\Newtonsoft.Json.dll
+D:\Code\Leeds Sharp\DoctorSharp\src\DrSharp.Web\bin\Owin.dll
+D:\Code\Leeds Sharp\DoctorSharp\src\DrSharp.Web\bin\Raven.Abstractions.dll
+D:\Code\Leeds Sharp\DoctorSharp\src\DrSharp.Web\bin\Raven.Client.Lightweight.dll
+D:\Code\Leeds Sharp\DoctorSharp\src\DrSharp.Web\bin\TweetSharp.dll
+D:\Code\Leeds Sharp\DoctorSharp\src\DrSharp.Web\bin\AIMLbot.dll
+D:\Code\Leeds Sharp\DoctorSharp\src\DrSharp.Web\bin\DrSharp.Domain.pdb
+D:\Code\Leeds Sharp\DoctorSharp\src\DrSharp.Web\bin\Hammock.pdb
+D:\Code\Leeds Sharp\DoctorSharp\src\DrSharp.Web\bin\Hammock.ClientProfile.pdb
+D:\Code\Leeds Sharp\DoctorSharp\src\DrSharp.Web\bin\Microsoft.AspNet.SignalR.Core.xml
+D:\Code\Leeds Sharp\DoctorSharp\src\DrSharp.Web\bin\Microsoft.AspNet.SignalR.Owin.xml
+D:\Code\Leeds Sharp\DoctorSharp\src\DrSharp.Web\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+D:\Code\Leeds Sharp\DoctorSharp\src\DrSharp.Web\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Code\Leeds Sharp\DoctorSharp\src\DrSharp.Web\bin\Nancy.xml
+D:\Code\Leeds Sharp\DoctorSharp\src\DrSharp.Web\bin\Nancy.Hosting.Aspnet.xml
+D:\Code\Leeds Sharp\DoctorSharp\src\DrSharp.Web\bin\Newtonsoft.Json.xml
+D:\Code\Leeds Sharp\DoctorSharp\src\DrSharp.Web\bin\Raven.Abstractions.pdb
+D:\Code\Leeds Sharp\DoctorSharp\src\DrSharp.Web\bin\Raven.Abstractions.xml
+D:\Code\Leeds Sharp\DoctorSharp\src\DrSharp.Web\bin\Raven.Client.Lightweight.pdb
+D:\Code\Leeds Sharp\DoctorSharp\src\DrSharp.Web\bin\Raven.Client.Lightweight.xml
+D:\Code\Leeds Sharp\DoctorSharp\src\DrSharp.Web\bin\TweetSharp.pdb
+D:\Code\Leeds Sharp\DoctorSharp\src\DrSharp.Web\obj\Debug\DrSharp.Web.csprojResolveAssemblyReference.cache
+D:\Code\Leeds Sharp\DoctorSharp\src\DrSharp.Web\obj\Debug\DrSharp.Web.dll
+D:\Code\Leeds Sharp\DoctorSharp\src\DrSharp.Web\obj\Debug\DrSharp.Web.pdb
+D:\Code\Leeds Sharp\DoctorSharp\src\DrSharp.Web\bin\AIMLbot.pdb

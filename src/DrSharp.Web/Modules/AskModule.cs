@@ -24,9 +24,9 @@ namespace DrSharp.Web.Modules
 
                     var drClockwork = new DoctorSharp(pathToAiml);
 
-                    var answer = drClockwork.AskMeAnything(model.From, model.Content);
+                    var answer = drClockwork.Ask(model.From, model.Content);
 
-                    ClockworkSms.Send(model.From, answer);
+                    //ClockworkSms.Send(model.From, answer);
 
                     var question = new Question
                     {

@@ -13,12 +13,13 @@ namespace DrSharp.Domain.Logic
             this.aimlPath = aimlPath;
         }
 
-        public string AskMeAnything(string name, string question)
+        public string Ask(string name, string question)
         {
             var sharpBot = new Bot();
             sharpBot.loadSettings(aimlPath);
+            //sharpBot.loadSettings(@"D:\Code\config\settings.xml");
             var loader = new AIMLbot.Utils.AIMLLoader(sharpBot);
-            loader.loadAIML(aimlPath);
+            loader.loadAIML(@"D:\Code\Leeds Sharp\DoctorSharp\src\DrSharp.Tests\aiml");
             sharpBot.isAcceptingUserInput = false;
             sharpBot.isAcceptingUserInput = true;
 

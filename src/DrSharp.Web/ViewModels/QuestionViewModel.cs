@@ -31,7 +31,7 @@ namespace DrSharp.Web.ViewModels
             DateAsked = twitterStatus.CreatedDate.ToShortDateString();
             Keyword = "";
             var chatbot = new DoctorSharp("~/config/settings.xml");
-            var answer = chatbot.AskMeAnything(From, Content);
+            var answer = chatbot.Ask(From, Content);
             Answer = answer;
         }
         #endregion
