@@ -22,11 +22,19 @@
             </summary>
             <returns>An <see cref="T:System.Collections.Generic.IEnumerable`1"/> instance containing <see cref="T:Nancy.Bootstrapper.IApplicationStartup"/> instances. </returns>
         </member>
-        <member name="M:Nancy.Hosting.Aspnet.DefaultNancyAspNetBootstrapper.GetApplicationRegistrationTasks">
+        <member name="M:Nancy.Hosting.Aspnet.DefaultNancyAspNetBootstrapper.RegisterAndGetRequestStartupTasks(Nancy.TinyIoc.TinyIoCContainer,System.Type[])">
+            <summary>
+            Resolves all request startup tasks
+            </summary>
+            <param name="container">Container to use</param>
+            <param name="requestStartupTypes">Types to register - not used</param>
+            <returns>An <see cref="T:System.Collections.Generic.IEnumerable`1"/> instance containing <see cref="T:Nancy.Bootstrapper.IRequestStartup"/> instances.</returns>
+        </member>
+        <member name="M:Nancy.Hosting.Aspnet.DefaultNancyAspNetBootstrapper.GetRegistrationTasks">
             <summary>
             Gets all registered application registration tasks
             </summary>
-            <returns>An <see cref="T:System.Collections.Generic.IEnumerable`1"/> instance containing <see cref="T:Nancy.Bootstrapper.IApplicationRegistrations"/> instances.</returns>
+            <returns>An <see cref="T:System.Collections.Generic.IEnumerable`1"/> instance containing <see cref="T:Nancy.Bootstrapper.IRegistrations"/> instances.</returns>
         </member>
         <member name="M:Nancy.Hosting.Aspnet.DefaultNancyAspNetBootstrapper.GetAllModules(Nancy.NancyContext)">
             <summary>
@@ -90,7 +98,7 @@
             by IEnumerable{Type} constructor dependencies.
             </summary>
             <param name="container">Container to register into</param>
-            <param name="collectionTypeRegistrationsn">Collection type registrations to register</param>
+            <param name="collectionTypeRegistrations">Collection type registrations to register</param>
         </member>
         <member name="M:Nancy.Hosting.Aspnet.DefaultNancyAspNetBootstrapper.RegisterModules(Nancy.TinyIoc.TinyIoCContainer,System.Collections.Generic.IEnumerable{Nancy.Bootstrapper.ModuleRegistration})">
             <summary>
@@ -105,6 +113,11 @@
             </summary>
             <param name="container">Container to register into</param>
             <param name="instanceRegistrations">Instance registration types</param>
+        </member>
+        <member name="P:Nancy.Hosting.Aspnet.DefaultNancyAspNetBootstrapper.RequestStartupTasks">
+            <summary>
+            Gets all request startup tasks
+            </summary>
         </member>
         <member name="T:Nancy.Hosting.Aspnet.NancyHandler">
             <summary>
@@ -124,6 +137,30 @@
             <param name="context">The <see cref="T:System.Web.HttpContextBase"/> of the request.</param>
             <param name="cb"></param>
             <param name="state"></param>
+        </member>
+        <member name="T:Nancy.Hosting.Aspnet.NancyResponseStream">
+            <summary>
+            A wrapper around an AspNet OutputStream that defers .Flush() to the parent HttpResponseBase
+            </summary>
+        </member>
+        <member name="M:Nancy.Hosting.Aspnet.NancyResponseStream.Flush">
+            <summary>
+            Calls Flush() on the wrapped HttpResponseBase
+            </summary>
+        </member>
+        <member name="M:Nancy.Hosting.Aspnet.TinyIoCAspNetExtensions.AsPerRequestSingleton(Nancy.TinyIoc.TinyIoCContainer.RegisterOptions)">
+            <summary>
+            Registers the dependency as per request lifetime
+            </summary>
+            <param name="registerOptions">Register options</param>
+            <returns>Register options</returns>
+        </member>
+        <member name="M:Nancy.Hosting.Aspnet.TinyIoCAspNetExtensions.AsPerRequestSingleton(Nancy.TinyIoc.TinyIoCContainer.MultiRegisterOptions)">
+            <summary>
+            Registers each item in the collection as per request lifetime
+            </summary>
+            <param name="registerOptions">Register options</param>
+            <returns>Register options</returns>
         </member>
     </members>
 </doc>

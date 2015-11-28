@@ -9,7 +9,7 @@
             'class': 'bubble bubble-answer bubble-new fade'
         });
         var $aH = $('<h3 />', {
-            text: ' Dr Clockwork'
+            text: ' Dr Sharp'
         });
         $aH.prepend($('<span />', {
             'class': 'glyphicon glyphicon-phone'
