@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using DrSharp.Domain.Models;
 using DrSharp.Web.ViewModels;
 using Nancy;
 using Raven.Client;
@@ -24,34 +25,15 @@ namespace DrSharp.Web.Modules
         {
             Get["/"] = _ =>
             {
-                // Twitter
-                var twitterService = new TwitterService(TwitterConsumerKey, TwitterConsumerSecret);
-                twitterService.AuthenticateWith(TwitterAccessToken, TwitterAccessTokenSecret);
-                //var tweets = twitterService.ListTweetsMentioningMe(new ListTweetsMentioningMeOptions());
-                var tweets = twitterService.ListTweetsMentioningMe(new ListTweetsMentioningMeOptions {SinceId = 5});
-                //var tweets2 = twitterService.Search(new SearchOptions{Q = "#drsharp"});
-                
-                var questions = new List<QuestionViewModel>();
-                foreach (var tweet in tweets.Where(t => !string.IsNullOrEmpty(t.Text) && t.Text.Contains("#drsharp")))
-                {
-                    var question = new QuestionViewModel(tweet) { Channel = MessageChannel.Twitter };
-
-                    // Note: tweet working, but not in reply to sender. Also need to add some hashtag to the answer.
-                    //twitterService.SendTweet(new SendTweetOptions
-                    //{
-                    //    DisplayCoordinates = true,
-                    //    InReplyToStatusId = tweet.Id,
-                    //    Status = question.Answer
-                    //});
-                    questions.Add(question);
-                }
+                // RavenDB
+                var questions = documentSession.Query<Question>().OrderByDescending(x => x.DateAsked).ToList();
 
                 var viewModel = new IndexViewModel
                 {
-                    Questions = questions,
-                    Count = tweets.Count()
+                    Questions = questions.Select(x => new QuestionViewModel(x)).ToList(),
+                    Count = documentSession.Query<Question>().Count(),
                 };
-
+                
                 return View["Index", viewModel];
             };
         }
