@@ -16,7 +16,7 @@ D:\Code\Leeds Sharp\DoctorSharp\src\DrSharp.Tests\bin\Debug\nunit.framework.dll
 D:\Code\Leeds Sharp\DoctorSharp\src\DrSharp.Tests\bin\Debug\AIMLbot.dll
 D:\Code\Leeds Sharp\DoctorSharp\src\DrSharp.Tests\bin\Debug\DrSharp.Domain.pdb
 D:\Code\Leeds Sharp\DoctorSharp\src\DrSharp.Tests\bin\Debug\nunit.framework.xml
+D:\Code\Leeds Sharp\DoctorSharp\src\DrSharp.Tests\bin\Debug\AIMLbot.pdb
 D:\Code\Leeds Sharp\DoctorSharp\src\DrSharp.Tests\obj\Debug\DrSharp.Tests.csprojResolveAssemblyReference.cache
 D:\Code\Leeds Sharp\DoctorSharp\src\DrSharp.Tests\obj\Debug\DrSharp.Tests.dll
 D:\Code\Leeds Sharp\DoctorSharp\src\DrSharp.Tests\obj\Debug\DrSharp.Tests.pdb
-D:\Code\Leeds Sharp\DoctorSharp\src\DrSharp.Tests\bin\Debug\AIMLbot.pdb

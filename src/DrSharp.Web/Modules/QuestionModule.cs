@@ -4,7 +4,6 @@ using DrSharp.Web.ViewModels;
 using Nancy;
 using Raven.Client;
 using TweetSharp;
-using SearchOptions = TweetSharp.SearchOptions;
 
 namespace DrSharp.Web.Modules
 {

@@ -53,7 +53,6 @@ namespace DrSharp.Web
         {
             base.ApplicationStartup(container, pipelines);
             CookieBasedSessions.Enable(pipelines);
-            RouteTable.Routes.MapHubs();
             container.Register(GlobalHost.ConnectionManager.GetHubContext<SharpHub>());
         }
 
