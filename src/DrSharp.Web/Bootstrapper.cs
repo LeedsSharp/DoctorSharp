@@ -1,5 +1,4 @@
-﻿using System.Web.Routing;
-using DrSharp.Web.Raven;
+﻿using DrSharp.Web.Raven;
 using Microsoft.AspNet.SignalR;
 using Nancy;
 using Nancy.Bootstrapper;

@@ -1,16 +1,3 @@
-E:\Code\GitHub\DoctorSharp\src\DrSharp.Domain\bin\Debug\DrSharp.Domain.dll
-E:\Code\GitHub\DoctorSharp\src\DrSharp.Domain\bin\Debug\DrSharp.Domain.pdb
-E:\Code\GitHub\DoctorSharp\src\DrSharp.Domain\bin\Debug\AIMLbot.dll
-E:\Code\GitHub\DoctorSharp\src\DrSharp.Domain\bin\Debug\Clockwork.dll
-E:\Code\GitHub\DoctorSharp\src\DrSharp.Domain\bin\Debug\Raven.Abstractions.dll
-E:\Code\GitHub\DoctorSharp\src\DrSharp.Domain\bin\Debug\Raven.Client.Lightweight.dll
-E:\Code\GitHub\DoctorSharp\src\DrSharp.Domain\bin\Debug\Raven.Abstractions.pdb
-E:\Code\GitHub\DoctorSharp\src\DrSharp.Domain\bin\Debug\Raven.Abstractions.xml
-E:\Code\GitHub\DoctorSharp\src\DrSharp.Domain\bin\Debug\Raven.Client.Lightweight.pdb
-E:\Code\GitHub\DoctorSharp\src\DrSharp.Domain\bin\Debug\Raven.Client.Lightweight.xml
-E:\Code\GitHub\DoctorSharp\src\DrSharp.Domain\obj\Debug\DrSharp.Domain.dll
-E:\Code\GitHub\DoctorSharp\src\DrSharp.Domain\obj\Debug\DrSharp.Domain.pdb
-E:\Code\GitHub\DoctorSharp\src\DrSharp.Domain\obj\Debug\DrSharp.Domain.csprojResolveAssemblyReference.cache
 D:\Code\Leeds Sharp\DoctorSharp\src\DrSharp.Domain\bin\Debug\DrSharp.Domain.dll
 D:\Code\Leeds Sharp\DoctorSharp\src\DrSharp.Domain\bin\Debug\DrSharp.Domain.pdb
 D:\Code\Leeds Sharp\DoctorSharp\src\DrSharp.Domain\bin\Debug\AIMLbot.dll

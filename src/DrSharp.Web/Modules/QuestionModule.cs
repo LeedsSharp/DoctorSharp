@@ -1,10 +1,8 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using DrSharp.Domain.Models;
 using DrSharp.Web.ViewModels;
 using Nancy;
 using Raven.Client;
-using TweetSharp;
 
 namespace DrSharp.Web.Modules
 {
