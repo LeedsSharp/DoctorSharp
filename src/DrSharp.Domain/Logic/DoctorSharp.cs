@@ -5,8 +5,8 @@ namespace DrSharp.Domain.Logic
     public class DoctorSharp
     {
         private readonly string aimlPath;
-        private const string SettingsPath = @"D:\Code\Leeds Sharp\DoctorSharp\src\DrSharp.Web\config\settings.xml";
-        //private const string SettingsPath = @"E:\Code\GitHub\DoctorSharp\src\DrSharp.Web\config\";
+        //private const string SettingsPath = @"D:\Code\Leeds Sharp\DoctorSharp\src\DrSharp.Web\config\settings.xml";
+        private const string SettingsPath = @"E:\Code\GitHub\DoctorSharp\src\DrSharp.Web\config\settings.xml";
 
         public DoctorSharp(string aimlPath)
         {

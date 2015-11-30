@@ -15,7 +15,7 @@ namespace DrSharp.Web.ViewModels
         public QuestionViewModel(Question question)
         {
             To = question.ToPhoneNumber;
-            From = question.FromPhoneNumber;
+            From = question.From;
             Content = question.Content;
             Msg_Id = question.MessageId;
             DateAsked = question.DateAsked.ToString("g");
@@ -29,7 +29,7 @@ namespace DrSharp.Web.ViewModels
             To = "";
             From = twitterStatus.User != null ? twitterStatus.User.Name : "LS#er";
             Content = twitterStatus.Text;
-            Msg_Id = twitterStatus.Id.ToString();
+            Msg_Id = twitterStatus.Id;
             DateAsked = twitterStatus.CreatedDate.ToShortDateString();
             Keyword = "";
             if (!string.IsNullOrEmpty(Content))
@@ -62,7 +62,7 @@ namespace DrSharp.Web.ViewModels
             }
         }
         public string Content { get; set; }
-        public string Msg_Id { get; set; }
+        public long Msg_Id { get; set; }
         public string DateAsked { get; set; }
         public string Keyword { get; set; }
         public string Answer { get; set; }
