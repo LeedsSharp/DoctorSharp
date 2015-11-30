@@ -53,13 +53,11 @@ namespace DrSharp.Web.Modules
                     var drSharp = new DoctorSharp(pathToAiml);
                     var answer = drSharp.Ask(nextQuestion.Author.ScreenName, nextQuestion.Text);
 
-                    // Note: tweet working, but not in reply to sender. Also need to add some hashtag to the answer.
-                    //twitterService.SendTweet(new SendTweetOptions
-                    //{
-                    //    DisplayCoordinates = false,
-                    //    InReplyToStatusId = nextQuestion.Id,
-                    //    Status = answer
-                    //});
+                    twitterService.SendTweet(new SendTweetOptions
+                    {
+                        InReplyToStatusId = nextQuestion.Id,
+                        Status = @"@" + nextQuestion.Author.ScreenName + " " + answer
+                    });
 
                     var question = new Question
                     {
