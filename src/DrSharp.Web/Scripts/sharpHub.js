@@ -1,5 +1,5 @@
 ﻿$(function() {
-    var hub = $.connection.sharHub;
+    var hub = $.connection.sharpHub;
 
     hub.client.broadcastAnswer = function (question, answer, name) {
         var $convo = $('<div />', {            

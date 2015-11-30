@@ -51,7 +51,8 @@ namespace DrSharp.Web.Modules
 
                     var pathToAiml = System.Web.HttpContext.Current.Server.MapPath(@"~/aiml");
                     var drSharp = new DoctorSharp(pathToAiml);
-                    var answer = drSharp.Ask(nextQuestion.Author.ScreenName, nextQuestion.Text);
+                    var questionWithoutHashTag = nextQuestion.Text.Replace("#drsharp", "");
+                    var answer = drSharp.Ask(nextQuestion.Author.ScreenName, questionWithoutHashTag);
 
                     twitterService.SendTweet(new SendTweetOptions
                     {
