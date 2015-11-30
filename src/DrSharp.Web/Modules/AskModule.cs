@@ -23,58 +23,50 @@ namespace DrSharp.Web.Modules
         private const string Christmas2015EventId = "225585634";
 
         public AskModule(IDocumentSession documentSession, IHubContext hubContext)
-            : base("Ask")
         {
-            Post["/"] = _ =>
+            Get["/ask"] = _ =>
             {
                 try
                 {
-                    //// Twitter
+                    // RavenDb
+                    var storedQuestions = documentSession.Query<Question>().OrderByDescending(x => x.DateAsked).ToList();
+                    
+                    // Twitter
                     var twitterService = new TwitterService(TwitterConsumerKey, TwitterConsumerSecret);
                     twitterService.AuthenticateWith(TwitterAccessToken, TwitterAccessTokenSecret);
-                    ////var tweets = twitterService.ListTweetsMentioningMe(new ListTweetsMentioningMeOptions());
-                    //var tweets = twitterService.ListTweetsMentioningMe(new ListTweetsMentioningMeOptions { SinceId = 5 });
-                    ////var tweets2 = twitterService.Search(new SearchOptions{Q = "#drsharp"});
 
-                    //var questions = new List<QuestionViewModel>();
-                    //foreach (var tweet in tweets.Where(t => !string.IsNullOrEmpty(t.Text) && t.Text.Contains("#drsharp")))
-                    //{
-                    //    var question = new QuestionViewModel(tweet) { Channel = MessageChannel.Twitter };
+                    var twitterOptions = new ListTweetsMentioningMeOptions();
+                    if (storedQuestions.Any())
+                    {
+                        var sinceId = storedQuestions.First().MessageId;
+                        twitterOptions.SinceId = sinceId;
+                    }
+                    
+                    var tweets = twitterService.ListTweetsMentioningMe(twitterOptions).ToList();
+                    if (!tweets.Any()) return null;
 
-                    //    // Note: tweet working, but not in reply to sender. Also need to add some hashtag to the answer.
-                    //    //twitterService.SendTweet(new SendTweetOptions
-                    //    //{
-                    //    //    DisplayCoordinates = true,
-                    //    //    InReplyToStatusId = tweet.Id,
-                    //    //    Status = question.Answer
-                    //    //});
-                    //    questions.Add(question);
-                    //}
+                    var nextQuestion = tweets.First(t => !string.IsNullOrEmpty(t.Text) && t.Text.Contains("#drsharp"));
 
-                    var model = this.Bind<AskViewModel>();
+                    //var model = this.Bind<AskViewModel>();
 
                     var pathToAiml = System.Web.HttpContext.Current.Server.MapPath(@"~/aiml");
-
                     var drSharp = new DoctorSharp(pathToAiml);
-
-                    var answer = drSharp.Ask(model.From, model.Content);
+                    var answer = drSharp.Ask(nextQuestion.Author.ScreenName, nextQuestion.Text);
 
                     // Note: tweet working, but not in reply to sender. Also need to add some hashtag to the answer.
-                    twitterService.SendTweet(new SendTweetOptions
-                    {
-                        DisplayCoordinates = false,
-                        InReplyToStatusId = long.Parse(model.Msg_Id),
-                        Status = answer
-                    });
+                    //twitterService.SendTweet(new SendTweetOptions
+                    //{
+                    //    DisplayCoordinates = false,
+                    //    InReplyToStatusId = nextQuestion.Id,
+                    //    Status = answer
+                    //});
 
                     var question = new Question
                     {
-                        ToPhoneNumber = model.To,
-                        FromPhoneNumber = model.From,
-                        DateAsked = DateTime.Now,
-                        Content = model.Content,
-                        MessageId = model.Msg_Id,
-                        Keyword = model.Keyword,
+                        From = nextQuestion.Author.ScreenName,
+                        DateAsked = nextQuestion.CreatedDate,
+                        Content = nextQuestion.Text,
+                        MessageId = nextQuestion.Id,
                         Answer = answer
                     };
 
@@ -82,7 +74,7 @@ namespace DrSharp.Web.Modules
                     documentSession.SaveChanges();
 
                     // SignalR
-                    hubContext.Clients.All.broadcastAnswer(model.Content, answer, model.From);
+                    hubContext.Clients.All.broadcastAnswer(question.Content, question.Answer, question.From);
                     return null;
                 }
                 catch (Exception ex)
