@@ -16,7 +16,6 @@ namespace DrSharp.Web
             base.ConfigureApplicationContainer(container);
 
             var store = RavenSessionProvider.DocumentStore;
-
             container.Register<IDocumentStore>(store);
         }
 
